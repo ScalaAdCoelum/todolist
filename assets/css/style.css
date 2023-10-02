@@ -136,6 +136,7 @@ input[type="text"] {
 }
 
 button#addTask {
+    margin-top: 1rem;
     background-color: #ff6b6b;
     color: white;
     border: none;
@@ -250,16 +251,4 @@ label[for="theme"] {
     right: 17rem; /* Adjust the right position as needed */
     width: 100px; /* Set the width of the pin image */
     height: auto; /* Maintain aspect ratio */
-}
-
-.task {
-    width: 150px;
-    height: 50px;
-    background-color: #3498db;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    position: absolute;
-    cursor: grab;
-    user-select: none;
 }
