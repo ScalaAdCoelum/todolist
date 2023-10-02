@@ -1,0 +1,253 @@
+/* Use Google Fonts for playful and friendly typography */
+body {
+    font-family: 'Poppins', sans-serif; /* Replace with the desired playful font */
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Default Theme: Amongst the Strawberries */
+body.theme-default {
+    background-color: #ffd5e6; /* Light pink background */
+    color: #333;
+    font-family: 'Pacifico', cursive;
+}
+body.theme-default #list-title {
+    color: #ff6b6b;
+}
+body.theme-default input[type="text"] {
+    border-bottom: 2px solid #ff6b6b; /* Pink border for default theme */
+}
+body.theme-default select {
+    background-color: #ff6b6b; /* Pink background for theme selector button in default theme */
+    color: white;
+}
+body.theme-default button.delete,
+body.theme-default button.complete {
+    background-color: #ff6b6b; /* Pink button for default theme */
+    color: white;
+}
+
+body.theme-under-the-sea {
+    background-color: #63a5f0; /* Light blue background for under the sea theme */
+    color: #333;
+    font-family: 'Pacifico', cursive; /* Playful font for under the sea theme */
+}
+body.theme-under-the-sea button#addTask {
+    background-color: #63a5f0; /* Blue button for under the sea theme */
+}
+body.theme-under-the-sea #list-title {
+    color: #63a5f0; /* Blue color for the title in under the sea theme */
+}
+body.theme-under-the-sea input[type="text"] {
+    border-bottom: 2px solid #63a5f0; /* Blue border for under the sea theme */
+}
+body.theme-under-the-sea select {
+    background-color: #63a5f0; /* Blue background for theme selector button in under the sea theme */
+    color: white;
+}
+body.theme-under-the-sea button.delete,
+body.theme-under-the-sea button.complete {
+    background-color: #63a5f0; /* Blue button for under the sea theme */
+    color: white;
+}
+
+body.theme-woodland-creatures {
+    background-color: #d4aa4d; /* Brown background for woodland creatures theme */
+    color: #333;
+    font-family: 'Amatic SC', cursive; /* Playful font for woodland creatures theme */
+}
+body.theme-woodland-creatures button#addTask {
+    background-color: #d4aa4d; /* Brown button for woodland creatures theme */
+}
+body.theme-woodland-creatures #list-title {
+    color: #d4aa4d; /* Brown color for the title in woodland creatures theme */
+}
+body.theme-woodland-creatures input[type="text"] {
+    border-bottom: 2px solid #d4aa4d; /* Brown border for woodland creatures theme */
+}
+body.theme-woodland-creatures select {
+    background-color: #d4aa4d; /* Brown background for theme selector button in woodland creatures theme */
+    color: white;
+}
+body.theme-woodland-creatures button.delete,
+body.theme-woodland-creatures button.complete {
+    background-color: #d4aa4d; /* Brown button for woodland creatures theme */
+    color: white;
+}
+
+body.theme-outer-space {
+    background-color: #0b0b0b; /* Dark background for outer space theme */
+    color: #333;
+    font-family: 'Pacifico', cursive; /* Sci-fi font for outer space theme */
+}
+body.theme-outer-space button#addTask {
+    background-color: #0b0b0b; /* Dark button for outer space theme */
+}
+body.theme-outer-space #list-title {
+    color: #0b0b0b; /* Dark color for the title in outer space theme */
+}
+body.theme-outer-space input[type="text"] {
+    border-bottom: 2px solid #0b0b0b; /* Dark border for outer space theme */
+}
+body.theme-outer-space select {
+    background-color: #0b0b0b; /* Dark background for theme selector button in outer space theme */
+    color: white;
+}
+body.theme-outer-space button.delete,
+body.theme-outer-space button.complete {
+    background-color: #0b0b0b; /* Dark button for outer space theme */
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.container {
+    position: relative;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive; /* Replace with a different playful font */
+    color: #ff6b6b;
+    font-size: 30px; /* Increase font size for emphasis */
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+.todo-input {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    border: none;
+    border-bottom: 2px solid #ff6b6b;
+    outline: none;
+    font-family: 'Poppins', sans-serif; /* Use the same playful font */
+    font-size: 18px; /* Increase font size for better visibility */
+}
+
+button#addTask {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif; /* Use the same playful font */
+    font-size: 18px; /* Increase font size for better visibility */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    transition: background-color 0.3s ease; /* Smoothly transition background color */
+}
+
+li:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button.delete {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition background color and scale */
+}
+
+button.delete:hover {
+    background-color: #ff4d4d;
+    transform: scale(1.1); /* Scale up on hover for a playful effect */
+}
+
+.completed {
+    background-color: #a0ffa0; /* Light green for completed tasks */
+    transition: background-color 0.3s ease; /* Smoothly transition background color */
+}
+
+.complete {
+    background-color: #ff6b6b; /* Red for the Complete button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition background color and scale */
+}
+
+.complete:hover {
+    background-color: #ff4d4d; /* Darker red on hover */
+    transform: scale(1.1); /* Scale up on hover for a playful effect */
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.theme-selector {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.theme-selector label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+label[for="theme"] {
+    color: #333; /* Default text color for label */
+}
+
+.theme-selector select {
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    background-color: #ff6b6b; /* Pink background for theme selector button */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.pin-image {
+    position: absolute;
+    top: -40px; /* Adjust the top position as needed */
+    right: 17rem; /* Adjust the right position as needed */
+    width: 100px; /* Set the width of the pin image */
+    height: auto; /* Maintain aspect ratio */
+}
