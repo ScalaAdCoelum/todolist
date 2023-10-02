@@ -2,35 +2,43 @@ document.addEventListener('DOMContentLoaded', function () {
     const taskInput = document.getElementById('task');
     const addTaskButton = document.getElementById('addTask');
     const taskList = document.getElementById('taskList');
-    const themeSelector = document.getElementById('theme');
-    const pinImage = document.getElementById('pin-image'); // Added this line
+    const pinImage = document.getElementById('pin-image');
+    let isDragging = false;
+    let currentTask = null;
+    let offsetX, offsetY;
 
-    // Function to set the theme based on user selection
     function setTheme(theme) {
         document.body.className = `theme-${theme}`;
         switch (theme) {
             case 'under-the-sea':
-                pinImage.src = 'assets/images/pin-2.png'; // Replace with your under the sea pin image source
+                pinImage.src = 'assets/images/pin-2.png';
                 break;
             case 'woodland-creatures':
-                pinImage.src = 'assets/images/pin-4.png'; // Replace with your woodland creatures pin image source
+                pinImage.src = 'assets/images/pin-4.png';
                 break;
             case 'outer-space':
-                pinImage.src = 'assets/images/pin-1.png'; // Replace with your outer space pin image source
+                pinImage.src = 'assets/images/pin-1.png';
                 break;
             default:
-                pinImage.src = 'assets/images/pin-3.png'; // Replace with your default pin image source
+                pinImage.src = 'assets/images/pin-3.png';
         }
     }
 
-    // Event listener for theme selection
+    const themeSelector = document.getElementById('theme');
     themeSelector.addEventListener('change', function () {
         const selectedTheme = themeSelector.value;
         setTheme(selectedTheme);
     });
 
-    // Default theme on page load
     setTheme('default');
+
+    function deleteTask(listItem) {
+        listItem.remove();
+    }
+
+    function toggleCompleted(listItem) {
+        listItem.classList.toggle('completed');
+    }
 
     addTaskButton.addEventListener('click', function () {
         const taskText = taskInput.value.trim();
@@ -45,19 +53,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button class="complete"><i class="ri-check-double-line"></i></button>
             `;
 
+            listItem.draggable = true;
+
+            listItem.addEventListener('dragstart', function (e) {
+                isDragging = true;
+                currentTask = e.target;
+                offsetX = e.clientX - currentTask.offsetLeft;
+                offsetY = e.clientY - currentTask.offsetTop;
+            });
+
+            listItem.addEventListener('dragend', function () {
+                isDragging = false;
+                currentTask = null;
+            });
+
+            listItem.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            });
+
+            listItem.addEventListener('drop', function (e) {
+                if (currentTask !== null) {
+                    taskList.insertBefore(currentTask, listItem);
+                }
+            });
+
             taskList.appendChild(listItem);
             taskInput.value = '';
 
             // Add event listener to the delete button
             const deleteButton = listItem.querySelector('button.delete');
             deleteButton.addEventListener('click', function () {
-                listItem.remove();
+                deleteTask(listItem);
             });
 
             // Add event listener to the complete button
             const completeButton = listItem.querySelector('button.complete');
             completeButton.addEventListener('click', function () {
-                listItem.classList.toggle('completed');
+                toggleCompleted(listItem);
             });
         }
     });
