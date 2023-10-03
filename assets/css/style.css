@@ -253,6 +253,7 @@ label[for="theme"] {
 
 .music-button {
     background-color: transparent;
+    margin: 0 10px;
     border: none;
     cursor: pointer;
     padding: 10px;
@@ -307,5 +308,63 @@ body.theme-outer-space .music-button {
     cursor: pointer;
     font-family: 'Pacifico', cursive;
     font-size: 18px;
+    margin-top: 1rem;
+}
+
+
+/* Avatar style */
+
+h2 {
+    font-family: 'Fredoka One', cursive;
+    color: #ff6b6b;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-left: 20px; /* Add spacing between todo container and avatar container */
+    margin-top: 20px; /* Add margin to separate from the content above */
+}
+
+/* Style for the avatar preview */
+.avatar-preview {
+    margin-right: 50px; /* Adjust margin-right to control spacing from the right */
+    float: right; /* Float the avatar preview to the right */
+}
+
+.avatar-preview img {
+    max-width: 200px;
+}
+
+/* Style for the avatar upload input */
+input[type="file"] {
+    display: none;
+}
+
+/* Style for the randomize avatar button */
+.randomize-avatar {
+    background-color: transparent;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+}
+
+body.theme-default .randomize-avatar {
+    background-color: #ff6b6b;
+    color: white;
+    border: 2px solid #fff;
+    padding: 8px 15px;
+    border-radius: 50% 20% / 10% 40%;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
     margin-top: 1rem;
 }
