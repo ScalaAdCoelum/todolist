@@ -246,13 +246,17 @@ label[for="theme"] {
 /* Music button */
 
 .music-container {
-    position: absolute;
-    top: 16rem;
-    right: 48rem;
+    text-align: center;
+    margin-bottom: 10rem;
+    margin-right: 1.25rem;
 }
 
-.music-button i {
-    font-size: 20px;
+.music-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
 }
 
 body.theme-default .music-button {
