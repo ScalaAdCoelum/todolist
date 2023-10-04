@@ -458,5 +458,100 @@ body.theme-default .randomize-avatar {
     cursor: pointer;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Decrease font size for better mobile readability */
+    }
 
-/* Nav menu style */
+    /* Adjust spacing and margins for better mobile layout */
+    .container {
+        width: 90%; /* Make the container wider for mobile screens */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Increase the title font size for mobile screens */
+        margin-bottom: 10px; /* Reduce margin for smaller screens */
+    }
+
+    input[type="text"] {
+        width: 100%; /* Make text inputs full width on mobile */
+    }
+
+    button#addTask {
+        width: 100%; /* Make the button full width on mobile */
+    }
+
+    /* Adjust the layout of task items for mobile */
+    li {
+        margin-bottom: 10px; /* Increase spacing between task items on mobile */
+    }
+
+    /* Adjust the avatar container for mobile */
+    .avatar-container {
+        width: 100%; /* Make the avatar container full width on mobile */
+        margin-left: 0; /* Remove margin on mobile */
+    }
+
+    /* Adjust the avatar preview for mobile */
+    .avatar-preview {
+        margin-right: 0; /* Remove margin on mobile */
+        float: none; /* Remove float on mobile */
+    }
+
+    /* Adjust the randomize avatar button for mobile */
+    .randomize-avatar {
+        width: 100%; /* Make the button full width on mobile */
+        margin-top: 10px; /* Increase margin on mobile */
+    }
+
+    /* Show the avatar options in a scrollable container on mobile */
+    .avatar-options {
+        max-height: 150px; /* Adjust the max height for mobile screens */
+    }
+}
+
+/* Theme-specific styles for default theme on mobile */
+    body.theme-default {
+        background-color: #ffd5e6; /* Light pink background for default theme on mobile */
+        color: #333;
+        /* Add other theme-specific styles for default theme on mobile */
+    }
+
+    body.theme-default #list-title {
+        color: #ff6b6b;
+        /* Add other theme-specific styles for default theme on mobile */
+    }
+
+    body.theme-default input[type="text"] {
+        border-bottom: 2px solid #ff6b6b; /* Pink border for default theme on mobile */
+        /* Add other theme-specific styles for default theme on mobile */
+    }
+
+    /* Add similar theme-specific styles for other elements in the default theme on mobile */
+
+    /* Theme-specific styles for under-the-sea theme on mobile */
+    body.theme-under-the-sea {
+        background-color: #63a5f0; /* Light blue background for under the sea theme on mobile */
+        color: #333;
+        /* Add other theme-specific styles for under-the-sea theme on mobile */
+    }
+
+    /* Add similar theme-specific styles for other elements in the under-the-sea theme on mobile */
+
+    /* Theme-specific styles for woodland-creatures theme on mobile */
+    body.theme-woodland-creatures {
+        background-color: #d4aa4d; /* Brown background for woodland creatures theme on mobile */
+        color: #333;
+        /* Add other theme-specific styles for woodland-creatures theme on mobile */
+    }
+
+    /* Add similar theme-specific styles for other elements in the woodland-creatures theme on mobile */
+
+    /* Theme-specific styles for outer-space theme on mobile */
+    body.theme-outer-space {
+        background-color: #0b0b0b; /* Dark background for outer space theme on mobile */
+        color: #333;
+        /* Add other theme-specific styles for outer-space theme on mobile */
+    }
