@@ -441,7 +441,6 @@ body.theme-default .randomize-avatar {
 }
 
 .avatar-options {
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap; /* Prevent options from wrapping to the next line */

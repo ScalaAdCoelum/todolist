@@ -34,6 +34,26 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('selectedTheme', theme);
     }
 
+    // Function to save the selected avatar to local storage
+    function saveAvatarToLocalStorage(avatarSrc) {
+        localStorage.setItem('selectedAvatar', avatarSrc);
+    }
+
+    // Function to load the selected avatar from local storage
+    function loadAvatarFromLocalStorage() {
+        return localStorage.getItem('selectedAvatar') || 'assets/images/avatar-1.png'; // Default avatar image source
+    }
+
+    // Function to set the selected avatar based on the loaded value
+    function applyAvatarFromLocalStorage() {
+        const selectedAvatar = loadAvatarFromLocalStorage();
+        const avatarImage = document.getElementById('avatar-image');
+        avatarImage.src = selectedAvatar;
+    }
+
+    // Set the initial avatar based on local storage or a default
+    applyAvatarFromLocalStorage();
+
     // Function to load the selected theme from local storage
     function loadThemeFromLocalStorage() {
         return localStorage.getItem('selectedTheme') || 'default';
