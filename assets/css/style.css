@@ -26,6 +26,7 @@ body.theme-default select {
     color: white;
 }
 body.theme-default button.delete,
+body.theme-default button.edit,
 body.theme-default button.complete {
     background-color: #ff6b6b; /* Pink button for default theme */
     color: white;
@@ -53,6 +54,7 @@ body.theme-under-the-sea select {
     color: white;
 }
 body.theme-under-the-sea button.delete,
+body.theme-under-the-sea button.edit,
 body.theme-under-the-sea button.complete {
     background-color: #63a5f0; /* Blue button for under the sea theme */
     color: white;
@@ -81,6 +83,7 @@ body.theme-woodland-creatures select {
     color: white;
 }
 body.theme-woodland-creatures button.delete,
+body.theme-woodland-creatures button.edit,
 body.theme-woodland-creatures button.complete {
     background-color: #d4aa4d; /* Brown button for woodland creatures theme */
     color: white;
@@ -109,6 +112,7 @@ body.theme-outer-space select {
     color: white;
 }
 body.theme-outer-space button.delete,
+body.theme-outer-space button.edit,
 body.theme-outer-space button.complete {
     background-color: #0b0b0b; /* Dark button for outer space theme */
     border: 2px solid #fff;
@@ -195,7 +199,7 @@ li:hover {
     cursor: pointer;
     font-size: 14px;
     margin-left: auto; /* Push the button to the right, centering it */
-    margin-right: 5px; /* Add a small margin to the right for spacing */
+    margin-right: 1.25px; /* Add a small margin to the right for spacing */
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-flex; /* Use inline-flex to center the button */
     align-items: center;
@@ -224,6 +228,27 @@ li:hover {
 
 /* Apply hover effect to the delete button */
 .delete:hover {
+    background-color: #ff4d4d; /* Darker red on hover */
+    transform: scale(1.1); /* Scale up on hover for a playful effect */
+}
+
+.edit {
+    background-color: #ff6b6b; /* Red for the Delete button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 1px; /* Add a small margin to the right for spacing (1px) */
+}
+
+/* Apply hover effect to the delete button */
+.edit:hover {
     background-color: #ff4d4d; /* Darker red on hover */
     transform: scale(1.1); /* Scale up on hover for a playful effect */
 }
