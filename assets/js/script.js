@@ -226,3 +226,62 @@ document.addEventListener('DOMContentLoaded', function () {
         musicOffButton.style.display = 'none';
     });
 });
+
+    // Function to create an editable input for task category
+    function createEditableCategory(category) {
+        const categoryInput = document.createElement('input');
+        categoryInput.type = 'text';
+        categoryInput.value = category;
+        categoryInput.classList.add('editable-category');
+        return categoryInput;
+    }
+
+    // Function to add a "Category" input to a task item
+    function addCategoryInput(taskItem, initialCategory) {
+        const categoryInput = createEditableCategory(initialCategory);
+        categoryInput.setAttribute('placeholder', 'Category');
+        categoryInput.classList.add('task-category');
+
+        // Append the category input before the task text
+        taskItem.insertBefore(categoryInput, taskItem.firstChild);
+
+        // Event listener to save edited category when Enter key is pressed or input loses focus
+        categoryInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                categoryInput.blur(); // Trigger blur event to save the category
+            }
+        });
+
+        categoryInput.addEventListener('blur', function () {
+            saveTasksToLocalStorage(); // Save the edited task category
+        });
+    }
+
+    // Function to filter tasks by category
+    function filterTasksByCategory(category) {
+        const taskItems = document.querySelectorAll('.task-item');
+        taskItems.forEach(function (taskItem) {
+            const taskCategoryInput = taskItem.querySelector('.task-category');
+            if (taskCategoryInput) {
+                const taskCategory = taskCategoryInput.value.toLowerCase();
+                if (category === 'all' || taskCategory === category) {
+                    taskItem.style.display = ''; // Show the task item
+                } else {
+                    taskItem.style.display = 'none'; // Hide the task item
+                }
+            }
+        });
+    }
+
+    // Add a "Category" input to each task item
+    const taskItems = document.querySelectorAll('.task-item');
+    taskItems.forEach(function (taskItem) {
+        addCategoryInput(taskItem, '');
+    });
+
+    // Add a category filter dropdown
+    const categoryFilter = document.getElementById('category-filter');
+    categoryFilter.addEventListener('change', function () {
+        const selectedCategory = categoryFilter.value.toLowerCase();
+        filterTasksByCategory(selectedCategory);
+    });
