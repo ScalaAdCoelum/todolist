@@ -30,26 +30,45 @@ document.addEventListener('DOMContentLoaded', function () {
     setTheme('default');
 
     addTaskButton.addEventListener('click', function () {
-        const taskText = taskInput.value.trim();
+    const taskText = taskInput.value.trim();
 
-        if (taskText !== '') {
-            const listItem = document.createElement('li');
-            listItem.classList.add('task-item');
-            listItem.innerHTML = `
-                <img src="assets/images/favicon.png" class="task-icon">
-                <span>${taskText}</span>
-                <button class="complete">Complete</button>
-            `;
+    if (taskText !== '') {
+        const listItem = document.createElement('li');
+        listItem.classList.add('task-item');
+        listItem.innerHTML = `
+            <img src="assets/images/favicon.png" class="task-icon">
+            <span>${taskText}</span>
+            <button class="complete"><i class="ri-checkbox-blank-circle-line"></i></button>
+            <button class="delete"><i class="ri-delete-bin-line"></i></button>
+        `;
 
-            taskList.appendChild(listItem);
-            taskInput.value = '';
+        taskList.appendChild(listItem);
+        taskInput.value = '';
 
-            const completeButton = listItem.querySelector('button.complete');
-            completeButton.addEventListener('click', function () {
-                listItem.classList.toggle('completed');
-            });
-        }
-    });
+        const completeButton = listItem.querySelector('button.complete');
+        completeButton.addEventListener('click', function () {
+            const icon = completeButton.querySelector('i');
+
+            // Toggle the class to change the icon
+            if (icon.classList.contains('ri-checkbox-blank-circle-line')) {
+                icon.classList.remove('ri-checkbox-blank-circle-line');
+                icon.classList.add('ri-checkbox-circle-line');
+            } else {
+                icon.classList.remove('ri-checkbox-circle-line');
+                icon.classList.add('ri-checkbox-blank-circle-line');
+            }
+
+            listItem.classList.toggle('completed');
+        });
+
+        const deleteButton = listItem.querySelector('button.delete');
+        deleteButton.addEventListener('click', function () {
+            // Remove the task item when the delete button is clicked
+            listItem.remove();
+        });
+    }
+});
+
 
     const musicToggle = document.getElementById('music-toggle');
     const musicOffButton = document.getElementById('music-off');

@@ -11,7 +11,7 @@
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     </head>
     <body>
-        <div class="music-container">
+        <div class="music-controls">
             <button id="music-toggle" class="music-button round"><i class="ri-volume-mute-line"></i></button>
             <button id="music-off" class="music-button round"><i class="ri-volume-down-line"></i></button>
         </div>
@@ -42,12 +42,18 @@
         <div class="avatar-container">
             <h2>Choose your avatar!</h2>
             <div class="avatar-preview">
-                <img id="avatar-image" src="assets/images/avatar-2.png" alt="Avatar">
+                <img id="avatar-image" src="assets/images/avatar-1.png" alt="Avatar 1">
             </div>
-            <input type="file" id="avatar-upload" accept="image/*">
+            <div class="avatar-options">
+                <img class="avatar-option" src="assets/images/avatar-1.png" alt="Avatar 1">
+                <img class="avatar-option" src="assets/images/avatar-2.png" alt="Avatar 2">
+                <img class="avatar-option" src="assets/images/avatar-3.png" alt="Avatar 3">
+                <img class="avatar-option" src="assets/images/avatar-4.png" alt="Avatar 4">
+            </div>
         </div>
     </div>
     <script src="assets/js/builder.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/localStorage.js"></script>
 </body>
 </html>
